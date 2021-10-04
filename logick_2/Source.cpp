@@ -1,10 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS
+#include "StdAfx.h"
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <ctime>
 #include <malloc.h>
+#include <fstream>
 using namespace std;
 
 int compare(const void* x1, const void* x2)
@@ -113,19 +115,15 @@ int zadanie1(void)
 	free(c);
 	end = clock();
 	float diff = (float)(end - start) / CLOCKS_PER_SEC;
-	cout << "Vremya = " << diff << endl;
-
-	system("pause");
+	cout << "Matrix n*m = " << n << " " << "Time = " << diff << endl;
 	return(0);
 }
 
 void q_two_one() {
-
 	clock_t start_s, end_s, start_q, end_q;
-	int count;
+	int count = 100000;
 	cout << "Nomer 2_1" << endl;
-	cout << "Input N = " << " ";
-	cin >> count;
+	cout << "Count = 100000" << endl;
 
 	int* items(NULL);
 	items = (int*)malloc(count * sizeof(int));
@@ -139,7 +137,7 @@ void q_two_one() {
 	cout.precision(12);
 	float diffqss = (float)(end_s - start_s) / CLOCKS_PER_SEC;
 	cout << "Vremya shell_1 = " << diffqss << endl;
-
+	cout << "Massive_shell = " << count << " " << "Time = " << diffqss << endl;
 
 	int* items_q(NULL);
 	items_q = (int*)malloc(count * sizeof(int));
@@ -150,20 +148,15 @@ void q_two_one() {
 	qs(items_q, 0, count - 1);
 	end_q = clock();
 	float diffqs = (float)(end_q - start_q) / CLOCKS_PER_SEC;
-	cout << "Vremya qs_1 = " << diffqs << endl;
-
-
-
-
+	cout << "Massive_qs = " << count << " " << "Time = " << diffqs << endl;
 	free(items);
 }
 void q_two_two() {
-
+	
 	clock_t start_s, end_s, start_q, end_q;
-	int count;
+	int count = 200000;
 	cout << "Nomer 2_2" << endl;
-	cout << "Input N = " << " ";
-	cin >> count;
+	cout << "Count = 200000" << endl;
 
 	int* items(NULL);
 	items = (int*)malloc(count * sizeof(int));
@@ -175,7 +168,7 @@ void q_two_two() {
 	cout << fixed;
 	cout.precision(12);
 	float diffqss = (float)(end_s - start_s) / CLOCKS_PER_SEC;
-	cout << "Vremya shell_2 = " << diffqss << endl;
+	cout << "Massive_shell_2 = " << count << " " << "Time = " << diffqss << endl;
 
 	int* items_q(NULL);
 	items_q = (int*)malloc(count * sizeof(int));
@@ -186,16 +179,15 @@ void q_two_two() {
 	qs(items_q, 0, count - 1);
 	end_q = clock();
 	float diffqs = (float)(end_q - start_q) / CLOCKS_PER_SEC;
-	cout << "Vremya qs_2 = " << diffqs << endl;
-
+	cout << "Massive_qs_2 = " << count << " " << "Time = " << diffqs << endl;
 	free(items);
 }
 void q_two_three() {
+	
 	clock_t start_s, end_s, start_q, end_q;
-	int count;
+	int count = 150000;
 	cout << "Nomer 2_3" << endl;
-	cout << "Input N = " << " ";
-	cin >> count;
+	cout << "Count = 150000" << endl;
 
 	int* items(NULL);
 	items = (int*)malloc(count * sizeof(int));
@@ -208,8 +200,8 @@ void q_two_three() {
 	cout << fixed;
 	cout.precision(12);
 	float diffqss = (float)(end_s - start_s) / CLOCKS_PER_SEC;
-	cout << "Vremya shell_3 = " << diffqss << endl;
-
+	cout << "Massive_shell_3 = " << count << " " << "Time = " << diffqss << endl;
+	
 	int* items_q(NULL);
 	items_q = (int*)malloc(count * sizeof(int));
 	srand(time(NULL));
@@ -220,16 +212,15 @@ void q_two_three() {
 	qs(items_q, 0, count - 1);
 	end_q = clock();
 	float diffqs = (float)(end_q - start_q) / CLOCKS_PER_SEC;
-	cout << "Vremya qs_3 = " << diffqs << endl;
-	
+	cout << "Massive_qs_3 = " << count << " " << "Time = " << diffqs << endl;
 	free(items);
 }
 void q_two_four() {
+
 	clock_t start_s, end_s, start_q, end_q;
-	int count;
+	int count = 100000;
 	cout << "Nomer 2_4" << endl;
-	cout << "Input N = " << " ";
-	cin >> count;
+	cout << "Count = 100000" << endl;
 
 	int* items(NULL);
 	items = (int*)malloc(count * sizeof(int));
@@ -249,7 +240,8 @@ void q_two_four() {
 	cout << fixed;
 	cout.precision(12);
 	float diffqss = (float)(end_s - start_s) / CLOCKS_PER_SEC;
-	cout << "Vremya shell_4 = " << diffqss << endl;
+	cout << "Massive_shell_4 = " << count << " " << "Time = " << diffqss << endl;
+	
 
 	int* items_q(NULL);
 	items_q = (int*)malloc(count * sizeof(int));
@@ -267,17 +259,17 @@ void q_two_four() {
 	end_q = clock();
 	float diffqs = (float)(end_q - start_q) / CLOCKS_PER_SEC;
 	cout << "Vremya qs_4 = " << diffqs << endl;
+	
+	cout << "Massive_qs_4 = " << count << " " << "Time = " << diffqs << endl;
 
 	free(items);
 }
 
 void q_two_five_one() {
-	
 	clock_t start, end;
-	int count;
+	int count = 50000;
 	cout << "Nomer 2_5_1" << endl;
-	cout << "Input N = " << " ";
-	cin >> count;
+	cout << "Count = 50000" << endl;
 
 	int* items(NULL);
 	items = (int*)malloc(count * sizeof(int));
@@ -289,15 +281,15 @@ void q_two_five_one() {
 	end = clock();
 	float diffqs = (float)(end - start) / CLOCKS_PER_SEC;
 	cout << "Vremya qsort_1 = " << diffqs << endl;
-
+	cout << "Massive_qsort_1 = " << count << " " << "Time = " << diffqs << endl;
+	
+	
 }
 void q_two_five_two() {
-
 	clock_t start, end;
-	int count;
+	int count = 75000;
 	cout << "Nomer 2_5_2" << endl;
-	cout << "Input N = " << " ";
-	cin >> count;
+	cout << "Count = 75000" << endl;
 
 	int* items(NULL);
 	items = (int*)malloc(count * sizeof(int));
@@ -311,14 +303,14 @@ void q_two_five_two() {
 	float diffqs = (float)(end - start) / CLOCKS_PER_SEC;
 	cout << "Vremya qsort_2 = " << diffqs << endl;
 
+	cout << "Massive_qsort_2 = " << count << " " << "Time = " << diffqs << endl;
+	
 }
 void q_two_five_three() {
-
 	clock_t start, end;
-	int count;
+	int count = 100000;
 	cout << "Nomer 2_5_3" << endl;
-	cout << "Input N = " << " ";
-	cin >> count;
+	cout << "Count = 100000" << endl;
 
 	int* items(NULL);
 	items = (int*)malloc(count * sizeof(int));
@@ -331,15 +323,13 @@ void q_two_five_three() {
 	end = clock();
 	float diffqs = (float)(end - start) / CLOCKS_PER_SEC;
 	cout << "Vremya qsort_3 = " << diffqs << endl;
-
+	cout << "Massive_qsort_3 = " << count << " " << "Time = " << diffqs << endl;
 }
 void q_two_five_four() {
-
 	clock_t start, end;
-	int count;
+	int count = 125000;
 	cout << "Nomer 2_5_4" << endl;
-	cout << "Input N = " << " ";
-	cin >> count;
+	cout << "Count = 125000" << endl;
 
 	int* items(NULL);
 	items = (int*)malloc(count * sizeof(int));
@@ -357,10 +347,12 @@ void q_two_five_four() {
 	end = clock();
 	float diffqs = (float)(end - start) / CLOCKS_PER_SEC;
 	cout << "Vremya qsort_4 = " << diffqs << endl;
-
+	cout << "Massive_qsort_4 = " << count << " " << "Time = " << diffqs << endl;
 }
 
 int main() {
+	ofstream out;
+	freopen("test.txt", "w", stdout);
 	zadanie1();
 	q_two_one();
 	cout << endl;
@@ -378,5 +370,6 @@ int main() {
 	cout << endl;
 	q_two_five_four();
 	cout << endl;
+	out.close();
 	system("pause");
 }
